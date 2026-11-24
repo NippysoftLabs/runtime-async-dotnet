@@ -1,0 +1,8 @@
+<Project>
+  <!-- Imported after each project file, so it sees the AsyncMode the project sets. -->
+  <PropertyGroup Condition="'$(AsyncMode)' == 'RuntimeAsync'">
+    <!-- The only difference between the two variants: ask Roslyn to emit runtime-async methods. -->
+    <Features>$(Features);runtime-async=on</Features>
+    <DefineConstants>$(DefineConstants);RUNTIME_ASYNC</DefineConstants>
+  </PropertyGroup>
+</Project>

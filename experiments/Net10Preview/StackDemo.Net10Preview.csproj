@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- .NET 10 preview setup: needs a .NET 10 SDK (global.json) and DOTNET_RuntimeAsync=1 when it runs. -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <EnablePreviewFeatures>true</EnablePreviewFeatures>
+    <Features>$(Features);runtime-async=on</Features>
+    <!-- SYSLIB5007: AsyncHelpers is marked experimental in .NET 10 and the build fails without this. -->
+    <NoWarn>$(NoWarn);SYSLIB5007</NoWarn>
+    <DefineConstants>$(DefineConstants);RUNTIME_ASYNC</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../shared/StackDemo.cs" />
+    <Compile Include="../../shared/AsyncMode.cs" />
+  </ItemGroup>
+</Project>

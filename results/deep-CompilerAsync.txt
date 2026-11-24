@@ -1,0 +1,13 @@
+[deep 1000] Build: CompilerAsync (default, compiler-generated state machine)
+[deep 1000] Recursion depth 1000 with suspension at the bottom -> depth reached: 1000
+[deep 3000] Build: CompilerAsync (default, compiler-generated state machine)
+[deep 3000] Recursion depth 3000 with suspension at the bottom -> depth reached: 3000
+[deep 5000] Build: CompilerAsync (default, compiler-generated state machine)
+[deep 5000] Stack overflow.
+[deep 5000] Repeated 4361 times:
+[deep 10000] Build: CompilerAsync (default, compiler-generated state machine)
+[deep 10000] Stack overflow.
+[deep 10000] Repeated 4364 times:
+[deep 100000] Build: CompilerAsync (default, compiler-generated state machine)
+[deep 100000] Stack overflow.
+[deep 100000] Repeated 4363 times:

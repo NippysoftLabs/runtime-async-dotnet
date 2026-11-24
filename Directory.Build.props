@@ -1,0 +1,10 @@
+<Project>
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <!-- Source paths in stack traces start at the repo root, not at a local folder. -->
+    <PathMap>$(MSBuildThisFileDirectory)=/repo/</PathMap>
+  </PropertyGroup>
+</Project>

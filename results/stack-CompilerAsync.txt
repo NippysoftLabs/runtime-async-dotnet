@@ -1,0 +1,40 @@
+Build: CompilerAsync (default, compiler-generated state machine)
+Runtime: 11.0.0
+InnerAsync: MethodImpl.Async=False, StateMachine=True
+
+--- Live stack before await: 17 frames ---
+   at Orders+<InnerAsync>d__2.MoveNext
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder.Start
+   at Orders.InnerAsync
+   at Orders+<MiddleAsync>d__1.MoveNext
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder.Start
+   at Orders.MiddleAsync
+   at Orders+<OuterAsync>d__0.MoveNext
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder.Start
+   at Orders.OuterAsync
+   at Program+<<Main>$>d__0.MoveNext
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder.Start
+   at Program.<Main>$
+   at Program.<Main>
+
+--- Live stack after await Task.Yield(): 10 frames ---
+   at Orders+<InnerAsync>d__2.MoveNext
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.ExecutionContextCallback
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.ExecuteDirectly
+   at System.Threading.ThreadPoolWorkQueue.Dispatch
+   at System.Threading.PortableThreadPool+WorkerThread.WorkerDoWork
+   at System.Threading.PortableThreadPool+WorkerThread.WorkerThreadStart
+   at System.Threading.Thread.StartCallback
+
+--- Exception stack trace (ex.StackTrace) ---
+   at Orders.FailingInnerAsync() in /repo/shared/StackDemo.cs:line 45
+   at Orders.FailingMiddleAsync() in /repo/shared/StackDemo.cs:line 40
+   at Orders.FailingOuterAsync() in /repo/shared/StackDemo.cs:line 38
+   at Program.<Main>$(String[] args) in /repo/shared/StackDemo.cs:line 13

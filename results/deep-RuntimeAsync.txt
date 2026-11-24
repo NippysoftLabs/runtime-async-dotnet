@@ -1,0 +1,11 @@
+[deep 1000] Build: RuntimeAsync (Features=runtime-async=on)
+[deep 1000] Recursion depth 1000 with suspension at the bottom -> depth reached: 1000
+[deep 3000] Build: RuntimeAsync (Features=runtime-async=on)
+[deep 3000] Recursion depth 3000 with suspension at the bottom -> depth reached: 3000
+[deep 5000] Build: RuntimeAsync (Features=runtime-async=on)
+[deep 5000] Recursion depth 5000 with suspension at the bottom -> depth reached: 5000
+[deep 10000] Build: RuntimeAsync (Features=runtime-async=on)
+[deep 10000] Recursion depth 10000 with suspension at the bottom -> depth reached: 10000
+[deep 100000] Build: RuntimeAsync (Features=runtime-async=on)
+[deep 100000] Stack overflow.
+[deep 100000]    at System.Runtime.CompilerServices.StaticsHelpers.GetGCThreadStaticBase(System.Runtime.CompilerServices.MethodTable*)

@@ -1,0 +1,22 @@
+Build: RuntimeAsync (Features=runtime-async=on)
+
+01 Task, await in try/catch/finally -> catch,finally
+02 ConfigureAwait(false) -> resumed, SynchronizationContext is null: True
+03 AsyncLocal<T> flows across await -> value after await: req-42
+04 ValueTask<T> completed synchronously -> 7
+05 Exception after suspension keeps its type -> ArgumentException: bad order id
+06 Cancelled token surfaces as OperationCanceledException -> TaskCanceledException
+07 Task.WhenAll keeps both failures -> inner exceptions: 2
+08 async void handler -> handler finished
+09 IAsyncEnumerable<T> iterator -> sum: 6
+10 Span<T> local used only before await -> total: 10
+11 Virtual Task override called through base -> derived call count: 1
+
+Method flags:
+  TryCatchFinallyAsync: MethodImpl.Async=True, StateMachine=False
+  CompletedValueTaskAsync: MethodImpl.Async=True, StateMachine=False
+  AsyncVoidHandler: MethodImpl.Async=False, StateMachine=True
+  CountAsync: MethodImpl.Async=False, StateMachine=True
+  SpanBeforeAwaitAsync: MethodImpl.Async=True, StateMachine=False
+  RecurseAsync: MethodImpl.Async=True, StateMachine=False
+  ReadAsync: MethodImpl.Async=True, StateMachine=False

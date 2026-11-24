@@ -1,0 +1,28 @@
+$ dotnet bin/Release/net10.0/StackDemo.Net10Preview.dll   (DOTNET_RuntimeAsync not set)
+Unhandled exception. System.TypeLoadException: Could not load type 'Program' from assembly 'StackDemo.Net10Preview, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' because the format is invalid.
+
+$ DOTNET_RuntimeAsync=1 dotnet bin/Release/net10.0/StackDemo.Net10Preview.dll
+Build: RuntimeAsync (Features=runtime-async=on)
+Runtime: 10.0.12
+InnerAsync: MethodImpl.Async=True, StateMachine=False
+
+--- Live stack before await: 6 frames ---
+   at Orders.InnerAsync
+   at Orders.MiddleAsync
+   at Orders.OuterAsync
+   at Program.<Main>$
+   at Program.<Main>$
+   at Program.<Main>
+
+--- Live stack after await Task.Yield(): 5 frames ---
+   at Orders.InnerAsync
+   at System.Runtime.CompilerServices.AsyncHelpers+ThunkTaskCore.MoveNext
+   at System.Threading.ThreadPoolWorkQueue.Dispatch
+   at System.Threading.PortableThreadPool+WorkerThread.WorkerThreadStart
+   at System.Threading.Thread.StartCallback
+
+--- Exception stack trace (ex.StackTrace) ---
+   at Orders.FailingInnerAsync() in /repo/shared/StackDemo.cs:line 45
+   at System.Runtime.CompilerServices.AsyncHelpers.ThunkTaskCore.MoveNext[T,TOps](T task)
+--- End of stack trace from previous location ---
+   at Program.<Main>$(String[] args) in /repo/shared/StackDemo.cs:line 4

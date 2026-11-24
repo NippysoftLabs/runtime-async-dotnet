@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AsyncMode>CompilerAsync</AsyncMode>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../shared/AsyncProbe.cs" />
+    <Compile Include="../../shared/AsyncMode.cs" />
+  </ItemGroup>
+</Project>
