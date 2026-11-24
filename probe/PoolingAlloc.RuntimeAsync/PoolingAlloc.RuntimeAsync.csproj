@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AsyncMode>RuntimeAsync</AsyncMode>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../shared/PoolingAlloc.cs" />
+    <Compile Include="../../shared/AsyncMode.cs" />
+  </ItemGroup>
+</Project>

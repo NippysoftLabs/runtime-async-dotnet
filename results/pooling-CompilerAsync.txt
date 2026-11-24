@@ -1,0 +1,7 @@
+Build: CompilerAsync (default, compiler-generated state machine)
+PooledAsync: MethodImpl.Async=False, StateMachine=True
+PlainAsync: MethodImpl.Async=False, StateMachine=True
+Run 1, direct await: pooling builder ValueTask<int>: 0 B/call; plain ValueTask<int>: 104 B/call
+Run 2, direct await: pooling builder ValueTask<int>: 0 B/call; plain ValueTask<int>: 104 B/call
+Run 1, through a Func<ValueTask<int>>: pooling builder ValueTask<int>: 0 B/call; plain ValueTask<int>: 104 B/call
+Run 2, through a Func<ValueTask<int>>: pooling builder ValueTask<int>: 0 B/call; plain ValueTask<int>: 104 B/call

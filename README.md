@@ -20,6 +20,7 @@ Only `Directory.Build.targets` differs between the two variants. The C# files in
 | `minimal/RuntimeAsyncCheck` | The code shown in the article: one project with runtime-async on, its live stack before and after an `await`. Output in `results/minimal-check.txt`; built with `-p:Features= --no-incremental` (runtime-async off) in `results/minimal-check-features-off.txt`. |
 | `src/StackDemo.*` | Live stack (`new StackTrace()`) before and after an `await`, and the exception stack trace. |
 | `probe/AsyncProbe.*` | 11 edge cases (await in catch/finally, `ConfigureAwait(false)`, `AsyncLocal<T>`, `async void`, `IAsyncEnumerable<T>`...) and which methods get the runtime-async flag. `deep <n>` runs async recursion `n` levels deep. |
+| `probe/PoolingAlloc.*` | Bytes per call of a `ValueTask<int>` method with `[AsyncMethodBuilder(typeof(PoolingAsyncValueTaskMethodBuilder<>))]` next to a plain one, 20,000 calls that each suspend once, Release. With runtime-async on, the pooling builder is not used: 0 → 56 B/call with a direct `await` (0 → 184 B/call through a `Func<ValueTask<int>>`). Output in `results/pooling-*.txt`. |
 | `probe/BclScan` | Counts methods compiled as runtime-async vs. state machine in three .NET 11 framework assemblies. |
 | `bench/AsyncBench.*` | BenchmarkDotNet 0.15.8, `[MemoryDiagnoser]`, ShortRun, in-process: a completed chain and two suspending chains of three nested async calls. |
 | `experiments/Net10Preview` | The .NET 10 preview setup: `EnablePreviewFeatures`, `NoWarn SYSLIB5007` and `DOTNET_RuntimeAsync=1`. |

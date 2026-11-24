@@ -1,0 +1,7 @@
+Build: RuntimeAsync (Features=runtime-async=on)
+PooledAsync: MethodImpl.Async=True, StateMachine=False
+PlainAsync: MethodImpl.Async=True, StateMachine=False
+Run 1, direct await: pooling builder ValueTask<int>: 56 B/call; plain ValueTask<int>: 56 B/call
+Run 2, direct await: pooling builder ValueTask<int>: 56 B/call; plain ValueTask<int>: 56 B/call
+Run 1, through a Func<ValueTask<int>>: pooling builder ValueTask<int>: 184 B/call; plain ValueTask<int>: 184 B/call
+Run 2, through a Func<ValueTask<int>>: pooling builder ValueTask<int>: 184 B/call; plain ValueTask<int>: 184 B/call
