@@ -1,0 +1,30 @@
+InnerAsync: runtime async=False, state machine=True
+Live stack before await: 17 frames
+   at <InnerAsync>d__2.MoveNext
+   at AsyncMethodBuilderCore.Start
+   at AsyncTaskMethodBuilder.Start
+   at Orders.InnerAsync
+   at <MiddleAsync>d__1.MoveNext
+   at AsyncMethodBuilderCore.Start
+   at AsyncTaskMethodBuilder.Start
+   at Orders.MiddleAsync
+   at <OuterAsync>d__0.MoveNext
+   at AsyncMethodBuilderCore.Start
+   at AsyncTaskMethodBuilder.Start
+   at Orders.OuterAsync
+   at <<Main>$>d__0.MoveNext
+   at AsyncMethodBuilderCore.Start
+   at AsyncTaskMethodBuilder.Start
+   at Program.<Main>$
+   at Program.<Main>
+Live stack after await: 10 frames
+   at <InnerAsync>d__2.MoveNext
+   at AsyncStateMachineBox`1.ExecutionContextCallback
+   at ExecutionContext.RunFromThreadPoolDispatchLoop
+   at AsyncStateMachineBox`1.MoveNext
+   at AsyncStateMachineBox`1.MoveNext
+   at AsyncStateMachineBox`1.ExecuteDirectly
+   at ThreadPoolWorkQueue.Dispatch
+   at WorkerThread.WorkerDoWork
+   at WorkerThread.WorkerThreadStart
+   at Thread.StartCallback

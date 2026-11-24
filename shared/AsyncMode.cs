@@ -7,7 +7,7 @@ public static class AsyncMode
     // ECMA-335 augment for runtime async: MethodImplAttributes.Async = 0x2000.
     private const MethodImplAttributes AsyncFlag = (MethodImplAttributes)0x2000;
 
-    // Name of the build variant, set by Directory.Build.props.
+    // Name of the build variant. Directory.Build.targets defines RUNTIME_ASYNC when the project sets AsyncMode to RuntimeAsync.
     public const string BuildVariant =
 #if RUNTIME_ASYNC
         "RuntimeAsync (Features=runtime-async=on)";

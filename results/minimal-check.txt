@@ -1,0 +1,14 @@
+InnerAsync: runtime async=True, state machine=False
+Live stack before await: 5 frames
+   at Orders.InnerAsync
+   at Orders.MiddleAsync
+   at Orders.OuterAsync
+   at Program.<Main>$
+   at Program.<Main>
+Live stack after await: 6 frames
+   at Orders.InnerAsync
+   at RuntimeAsyncTask`1.DispatchContinuations
+   at ThreadPoolWorkQueue.Dispatch
+   at WorkerThread.WorkerDoWork
+   at WorkerThread.WorkerThreadStart
+   at Thread.StartCallback
