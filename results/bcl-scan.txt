@@ -1,0 +1,4 @@
+Runtime: 11.0.0
+System.Private.CoreLib: MethodImpl.Async=107, AsyncStateMachine=5
+System.Net.Http: MethodImpl.Async=119, AsyncStateMachine=2
+System.Text.Json: MethodImpl.Async=0, AsyncStateMachine=17

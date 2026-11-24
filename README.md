@@ -19,6 +19,7 @@ Only `Directory.Build.targets` differs between the two variants. The C# files in
 |---|---|
 | `src/StackDemo.*` | Live stack (`new StackTrace()`) before and after an `await`, and the exception stack trace. |
 | `probe/AsyncProbe.*` | 11 edge cases (await in catch/finally, `ConfigureAwait(false)`, `AsyncLocal<T>`, `async void`, `IAsyncEnumerable<T>`...) and which methods get the runtime-async flag. `deep <n>` runs async recursion `n` levels deep. |
+| `probe/BclScan` | Counts methods compiled as runtime-async vs. state machine in three .NET 11 framework assemblies. |
 | `bench/AsyncBench.*` | BenchmarkDotNet 0.15.8, `[MemoryDiagnoser]`, ShortRun, in-process: a completed chain and two suspending chains of three nested async calls. |
 | `experiments/Net10Preview` | The .NET 10 preview setup: `EnablePreviewFeatures`, `NoWarn SYSLIB5007` and `DOTNET_RuntimeAsync=1`. |
 | `results/` | Raw outputs from the runs below. |
