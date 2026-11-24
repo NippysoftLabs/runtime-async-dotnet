@@ -1,0 +1,12 @@
+$ dotnet build src/StackDemo.CompilerAsync -c Release 
+Build: CompilerAsync (default, compiler-generated state machine)
+InnerAsync: MethodImpl.Async=False, StateMachine=True
+$ dotnet build src/StackDemo.CompilerAsync -c Release -p:UseRuntimeAsync=true
+Build: CompilerAsync (default, compiler-generated state machine)
+InnerAsync: MethodImpl.Async=False, StateMachine=True
+$ dotnet build src/StackDemo.RuntimeAsync -c Release 
+Build: RuntimeAsync (Features=runtime-async=on)
+InnerAsync: MethodImpl.Async=True, StateMachine=False
+$ dotnet build src/StackDemo.RuntimeAsync -c Release -p:UseRuntimeAsync=false
+Build: RuntimeAsync (Features=runtime-async=on)
+InnerAsync: MethodImpl.Async=True, StateMachine=False
